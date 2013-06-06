@@ -22,9 +22,18 @@ var config = {
 , hostname: null
 , port: 4000
 , model: {
-    defaultAdapter: 'memory'
+    defaultAdapter: 'postgres'
   }
-, sessions: {
+, db: {
+    postgres: {
+      user: null
+    , database: null
+    , password: null
+    , host: 'localhost'
+    , port: 3600
+    }
+  }
+  , sessions: {
     store: 'memory'
   , key: 'sid'
   , expiry: 14 * 24 * 60 * 60
