@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All Tickets</h2>
+  <%- linkTo('Create a new Ticket', addTicketPath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="tickets-list">
+<% if (tickets) { %>
+<% for (var i = 0, ii = tickets.length; i < ii; i++) { %>
+  <div class="row list-item" id="ticket-<%= tickets[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(tickets[i].id, ticketPath(tickets[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= tickets[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>

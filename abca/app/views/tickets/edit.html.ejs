@@ -1,0 +1,23 @@
+<div class="hero-unit">
+  <form id="ticket-form" class="form-horizontal" action="/tickets/<%= params.id %>?_method=PUT" method="POST">
+    <fieldset>
+      <legend>Update this Ticket</legend>
+      <% if(params.errors) { %>
+      <div class="control-group">
+        <ul>
+        <% for(var err in params.errors) { %>
+          <li><%= params.errors[err]; %></li>
+        <% } %>
+        </ul>
+      </div>
+      <% } %>
+
+      <%- partial('form', {ticket: ticket}) %>
+
+      <div class="form-actions">
+        <%- contentTag('input', 'Save', {type: 'submit', class: 'btn btn-primary'}) %>
+        <%- contentTag('button', 'Remove', {type: 'submit', formaction: '/tickets/' + params.id + '?_method=DELETE', formmethod: 'POST', class: 'btn btn-danger'}) %>
+      </div>
+    </fieldset>
+  </form>
+</div>
