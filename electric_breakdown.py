@@ -12,7 +12,7 @@ snapshot = {}
 storedEvents = json.loads(urllib.urlopen(appUrl+".json").read())
 
 for event in storedEvents['events']:
-	eventData = event["town"] + event["area"] + event["status"] + event["lastUpdate"]
+	eventData = event["town"] + event["area"] + event["status"]
 	print eventData
 	cleanData = "".join(eventData.lower().split())
 	#breakdownHash = hashlib.md5()
@@ -32,7 +32,7 @@ for summary in breakdownSummary:
 		status = breakdownArea.r3Status.encode("utf-8")
 		lastUpdate = breakdownArea.r4LastUpdate.encode("utf-8")
 
-		relevantData = "".join((town + area + status + lastUpdate).lower().split())
+		relevantData = "".join((town + area + status).lower().split())
 
 		if not snapshot.has_key(relevantData):
 			print town + area + status + lastUpdate
