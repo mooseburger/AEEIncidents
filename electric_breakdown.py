@@ -1,6 +1,7 @@
 import json
 import urllib
 import hashlib
+import dateutil.parser as dparser
 from suds.client import Client
 aee_url = 'http://wss.prepa.com/services/BreakdownReport?wsdl'
 aee_client = Client(aee_url)
@@ -34,6 +35,8 @@ for summary in breakdownSummary:
 
 		relevantData = "".join((town + area + status).lower().split())
 
+		updateDate = dparser.parse(lastUpdate, fuzzy = True)
+		lastUpdate = updateDate.strftime("%Y-%m-%d %H:%M:00")
 		if not snapshot.has_key(relevantData):
 			print town + area + status + lastUpdate
 			data = urllib.urlencode({"town" : town, "area" : area, "status" : status, "lastUpdate" : lastUpdate})
