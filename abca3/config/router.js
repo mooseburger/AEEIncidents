@@ -40,4 +40,5 @@ router.get('/').to('Main.index');
 // });
 
 router.resource('events');
+router.resource('messages');
 exports.router = router;
