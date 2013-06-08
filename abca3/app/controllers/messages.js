@@ -3,10 +3,10 @@ var Messages = function () {
 
   this.index = function (req, resp, params) {
     var self = this;
-    console.log(params);
-    geddy.model.Message.all(function(err, messages) {
+        geddy.model.Message.all(function(err, messages) {
       self.respond({params: params, messages: messages});
     });
+    
   };
 
   this.add = function (req, resp, params) {
@@ -14,8 +14,28 @@ var Messages = function () {
   };
 
   this.create = function (req, resp, params) {
+    paramsTwilio ={
+      action: params.action,
+      controller: params.controller,
+      method: params.method,
+      sent: 'false',
+      valid:'false',
+      twAccountSid: params.AccountSid,
+      twBody: params.Body,
+      twFrom: params.From,
+      twFromCity: params.FromCity,
+      twFromCountry: params.FromCountry,
+      twFromState: params.FromState,
+      twFromZip: params.FromZip,
+      twSmsSid: params.SmsSid,
+      twTo: params.To,
+      twToCity: params.ToCity,
+      twToCountry: params.ToCountry,
+      twToState: params.ToState,
+      twToZip: params.ToZip
+    }
     var self = this
-      , message = geddy.model.Message.create(params);
+      , message = geddy.model.Message.create(paramsTwilio);
 
     if (!message.isValid()) {
       params.errors = message.errors;
