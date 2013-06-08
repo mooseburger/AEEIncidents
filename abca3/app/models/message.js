@@ -14,7 +14,7 @@ var Message = function () {
     twToState: {type: 'string'},
     twToZip: {type: 'string'},
     twToCountry: {type: 'string'},
-    send: {type: 'boolean'}
+    sent: {type: 'boolean'}
   });
 
   /*
