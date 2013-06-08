@@ -12,36 +12,43 @@ snapshot = {}
 storedEvents = json.loads(urllib.urlopen(appUrl+".json").read())
 
 for event in storedEvents['events']:
-	eventData = event["town"] + event["area"] + event["status"]
-	jsonLastUpdate = dparser.parse(event["lastUpdate"], fuzzy = True).strftime(dateFormat)
-	eventData += jsonLastUpdate
-	
-	cleanData = "".join(eventData.lower().split())
-	
-	snapshot[cleanData] = eventData
+    eventData = event["town"] + event["area"] + event["status"]
+    jsonLastUpdate = dparser.parse(event["lastUpdate"], fuzzy = True).strftime(dateFormat)
+    eventData = eventData + jsonLastUpdate
+
+    cleanData = "".join(eventData.lower().split())
+    snapshot[cleanData] = eventData
 
 #print snapshot.keys()
 print "Done polling our database"
 breakdownSummary = aee_client.service.getBreakdownsSummary()
 
 for summary in breakdownSummary:
-	#print summary.r1TownOrCity
-	breakdowns = aee_client.service.getBreakdownsByTownOrCity(summary.r1TownOrCity)
-	for breakdownArea in breakdowns:
-		#print breakdownArea 
-		town = breakdownArea.r1TownOrCity.decode("utf-8")
-		area = breakdownArea.r2Area.decode("utf-8")
-		status = breakdownArea.r3Status.decode("utf-8")
-		lastUpdate = breakdownArea.r4LastUpdate.decode("utf-8")		
+    #print summary.r1TownOrCity
+    breakdowns = aee_client.service.getBreakdownsByTownOrCity(summary.r1TownOrCity)
+    for breakdownArea in breakdowns:
+        #print breakdownArea         
+        town = breakdownArea.r1TownOrCity.encode("utf-8")
+                
+        try:
+            area = breakdownArea.r2Area.encode("utf-8")
+        except UnicodeDecodeError:
+            print area            
+            area = area.decode("utf-8")            
 
-		updateDate = dparser.parse(lastUpdate, fuzzy = True)
-		lastUpdate = updateDate.strftime(dateFormat)
-		#print lastUpdate
-		identifyingData = town + area + status + lastUpdate
-		relevantData = "".join(identifyingData.lower().split())
-
-		if not relevantData in snapshot:
-			#print breakdownArea
-			#print identifyingData			
-			data = urllib.urlencode({"town" : town, "area" : area, "status" : status, "lastUpdate" : lastUpdate})
-			postResult = urllib.urlopen(appUrl, data).read()
+        status = breakdownArea.r3Status.encode("utf-8")
+        lastUpdate = breakdownArea.r4LastUpdate.encode("utf-8")
+        
+        updateDate = dparser.parse(lastUpdate, fuzzy = True)
+        lastUpdate = updateDate.strftime(dateFormat)
+        #print lastUpdate
+        identifyingData = town + area + status + lastUpdate
+        relevantData = "".join(identifyingData.lower().split())
+        
+        if not relevantData in snapshot:
+            #print identifyingData
+            urlParams = {"town" : town, "area" : area, "status" : status, "lastUpdate" : lastUpdate}
+            
+            data = urllib.urlencode(urlParams)
+                                     
+            postResult = urllib.urlopen(appUrl, data).read()
