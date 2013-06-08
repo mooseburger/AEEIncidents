@@ -19,6 +19,7 @@ var Messages = function () {
       controller: params.controller,
       method: params.method,
       sent: 'false',
+      valid:'false',
       twAccountSid: params.AccountSid,
       twBody: params.Body,
       twFrom: params.From,
