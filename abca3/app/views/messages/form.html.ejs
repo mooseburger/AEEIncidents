@@ -1,0 +1,92 @@
+<div class="control-group">
+  <label for="twFrom" class="control-label">twFrom</label>
+  <div class="controls">
+    <%- contentTag('input', message.twFrom, {type:'text', class:'span6', name:'twFrom'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twSmsSid" class="control-label">twSmsSid</label>
+  <div class="controls">
+    <%- contentTag('input', message.twSmsSid, {type:'text', class:'span6', name:'twSmsSid'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twAccountSid" class="control-label">twAccountSid</label>
+  <div class="controls">
+    <%- contentTag('input', message.twAccountSid, {type:'text', class:'span6', name:'twAccountSid'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twTo" class="control-label">twTo</label>
+  <div class="controls">
+    <%- contentTag('input', message.twTo, {type:'text', class:'span6', name:'twTo'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twBody" class="control-label">twBody</label>
+  <div class="controls">
+    <%- contentTag('input', message.twBody, {type:'text', class:'span6', name:'twBody'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twFromCity" class="control-label">twFromCity</label>
+  <div class="controls">
+    <%- contentTag('input', message.twFromCity, {type:'text', class:'span6', name:'twFromCity'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twFromState" class="control-label">twFromState</label>
+  <div class="controls">
+    <%- contentTag('input', message.twFromState, {type:'text', class:'span6', name:'twFromState'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twFromZip" class="control-label">twFromZip</label>
+  <div class="controls">
+    <%- contentTag('input', message.twFromZip, {type:'text', class:'span6', name:'twFromZip'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twFromCountry" class="control-label">twFromCountry</label>
+  <div class="controls">
+    <%- contentTag('input', message.twFromCountry, {type:'text', class:'span6', name:'twFromCountry'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twToCity" class="control-label">twToCity</label>
+  <div class="controls">
+    <%- contentTag('input', message.twToCity, {type:'text', class:'span6', name:'twToCity'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twToState" class="control-label">twToState</label>
+  <div class="controls">
+    <%- contentTag('input', message.twToState, {type:'text', class:'span6', name:'twToState'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twToZip" class="control-label">twToZip</label>
+  <div class="controls">
+    <%- contentTag('input', message.twToZip, {type:'text', class:'span6', name:'twToZip'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="twToCountry" class="control-label">twToCountry</label>
+  <div class="controls">
+    <%- contentTag('input', message.twToCountry, {type:'text', class:'span6', name:'twToCountry'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="send" class="control-label">send</label>
+  <div class="controls">
+    <select name="send", class="span1">
+      <% if(message.send) { -%>
+      <option>false</option>
+      <option selected>true</option>
+      <% } else { -%>
+      <option selected>false</option>
+      <option>true</option>
+      <% } -%>
+    </select>
+  </div>
+</div>
