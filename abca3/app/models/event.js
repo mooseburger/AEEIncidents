@@ -4,8 +4,8 @@ var Event = function () {
     town: {type: 'string'},
     area: {type: 'string'},
     status: {type: 'string'},
-    lastUpdate: {type: 'datetime'}
-    posted:{type:'boolean'}
+    lastUpdate: {type: 'datetime'},
+    posted: {type:'boolean'}
   });
 
   /*
