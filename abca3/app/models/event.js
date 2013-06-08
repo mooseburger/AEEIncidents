@@ -5,6 +5,7 @@ var Event = function () {
     area: {type: 'string'},
     status: {type: 'string'},
     lastUpdate: {type: 'datetime'}
+    posted:{type:'boolean'}
   });
 
   /*

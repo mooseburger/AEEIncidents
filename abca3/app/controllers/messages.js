@@ -3,9 +3,10 @@ var Messages = function () {
 
   this.index = function (req, resp, params) {
     var self = this;
-      geddy.model.Message.all(function(err, messages) {
+        geddy.model.Message.all(function(err, messages) {
       self.respond({params: params, messages: messages});
     });
+    
   };
 
   this.add = function (req, resp, params) {
@@ -13,7 +14,6 @@ var Messages = function () {
   };
 
   this.create = function (req, resp, params) {
-    console.log("test");
     paramsTwilio ={
       action: params.action,
       controller: params.controller,
