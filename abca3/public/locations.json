@@ -1,0 +1,763 @@
+{"params":{"method":"GET","controller":"Locations","action":"index","format":"json"},
+"locations":[
+	{
+		"municipio": "ADJUNTAS",
+		"barrio": "Bo Tanama"
+	},
+	{
+		"municipio": "ADJUNTAS",
+		"barrio": "Bo Guayo"
+	},
+	{
+		"municipio": "ADJUNTAS",
+		"barrio": "Bo Juan Gonzalez"
+	},
+	{
+		"municipio": "AGUADA",
+		"barrio": "Bo Espinal"
+	},
+	{
+		"municipio": "AGUADA",
+		"barrio": "Bo Mamey"
+	},
+	{
+		"municipio": "AGUADA",
+		"barrio": "Bo Jaguey"
+	},
+	{
+		"municipio": "AGUADA",
+		"barrio": "Piedras Blancas"
+	},
+	{
+		"municipio": "AGUADA",
+		"barrio": "Bo Jaguey"
+	},
+	{
+		"municipio": "AGUADA",
+		"barrio": "Bo Piedras Blancas"
+	},
+	{
+		"municipio": "AGUADILLA",
+		"barrio": "Bo Ceiba Alta"
+	},
+	{
+		"municipio": "AGUADILLA",
+		"barrio": "Ceiba Alta"
+	},
+	{
+		"municipio": "AGUADILLA",
+		"barrio": "Bo Borinquen / Playuela"
+	},
+	{
+		"municipio": "AGUADILLA",
+		"barrio": "Bo Caimital"
+	},
+	{
+		"municipio": "AGUAS BUENAS",
+		"barrio": "Bo Sumidero"
+	},
+	{
+		"municipio": "AGUAS BUENAS",
+		"barrio": "Bo Sumidero"
+	},
+	{
+		"municipio": "AGUAS BUENAS",
+		"barrio": "Urb Quintas De Jagueyes Ii"
+	},
+	{
+		"municipio": "AIBONITO",
+		"barrio": "Bo Los Cuadritos"
+	},
+	{
+		"municipio": "AIBONITO",
+		"barrio": "Bo Pasto"
+	},
+	{
+		"municipio": "ARECIBO",
+		"barrio": "Bo Hoyos/Arrozal"
+	},
+	{
+		"municipio": "ARECIBO",
+		"barrio": "Sector Echegaray"
+	},
+	{
+		"municipio": "ARECIBO",
+		"barrio": "Bo Sabana Hoyos"
+	},
+	{
+		"municipio": "ARECIBO",
+		"barrio": "Jardines De Factor"
+	},
+	{
+		"municipio": "ARECIBO",
+		"barrio": "Urb Brisas De Manantiales"
+	},
+	{
+		"municipio": "ARECIBO",
+		"barrio": "Bo Higuillar"
+	},
+	{
+		"municipio": "ARECIBO",
+		"barrio": "Bo Hato / La Planta"
+	},
+	{
+		"municipio": "ARECIBO",
+		"barrio": "Bo Bajadero / Carreras"
+	},
+	{
+		"municipio": "BARCELONETA",
+		"barrio": "Bo Garrochales"
+	},
+	{
+		"municipio": "BARRANQUITAS",
+		"barrio": "Bo Quebradillas"
+	},
+	{
+		"municipio": "BARRANQUITAS",
+		"barrio": "Bo Palo Hincado"
+	},
+	{
+		"municipio": "BARRANQUITAS",
+		"barrio": "Bo Caonillas"
+	},
+	{
+		"municipio": "BARRANQUITAS",
+		"barrio": "El Abanico"
+	},
+	{
+		"municipio": "BARRANQUITAS",
+		"barrio": "Bo Qda Grande"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Bajuras"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Res Villas De Monterrey"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Magnolia Gardens"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Urb Santa Monica"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Los Laureles"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Urb Santa Rosa"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Hato Tejas"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Quebrada Honda"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Urb Santa Juanita"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Brisas Del Lago"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Villas De Monterey"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Buena Vista"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Urb Jdns De Bayamonte"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Urb Villas De Monterey"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Jdns De Caparra"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Cerro Gordo"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Urb Santa Juanita"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Dajaos"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Urb Monte Claro"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Magnolia Garden"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Cerro Gordo"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Cond Bayamon Gardens"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Guaraguao"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bayamon Garden Apts"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Puente Plata"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Urb Royal Town"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Urb Sierra Linda"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Jurutungo / Par Santa Olaya"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Urb Lomas Verdes"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Pajaros"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Bo Minillas"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Reparto El Lago"
+	},
+	{
+		"municipio": "BAYAMON",
+		"barrio": "Flamingo Apartment"
+	},
+	{
+		"municipio": "CABO ROJO",
+		"barrio": "Bo Cerrillos"
+	},
+	{
+		"municipio": "CABO ROJO",
+		"barrio": "Bo Cerrillos"
+	},
+	{
+		"municipio": "CABO ROJO",
+		"barrio": "Conde Avila"
+	},
+	{
+		"municipio": "CABO ROJO",
+		"barrio": "Bo Guanjibo"
+	},
+	{
+		"municipio": "CABO ROJO",
+		"barrio": "Urb Monte Rio"
+	},
+	{
+		"municipio": "CABO ROJO",
+		"barrio": "Bo Sabana Alta"
+	},
+	{
+		"municipio": "CAGUAS",
+		"barrio": "Bo Borinquen Pradera"
+	},
+	{
+		"municipio": "CAGUAS",
+		"barrio": "Bo Beatriz"
+	},
+	{
+		"municipio": "CAGUAS",
+		"barrio": "Bo Borinquen Praderas"
+	},
+	{
+		"municipio": "CAGUAS",
+		"barrio": "Urb Boneville Valley"
+	},
+	{
+		"municipio": "CAGUAS",
+		"barrio": "Villa Blanca"
+	},
+	{
+		"municipio": "CAGUAS",
+		"barrio": "Bonneville Heights"
+	},
+	{
+		"municipio": "CAMUY",
+		"barrio": "Bo Cienaga"
+	},
+	{
+		"municipio": "CANOVANAS",
+		"barrio": "Urb Villas De Loiza"
+	},
+	{
+		"municipio": "CANOVANAS",
+		"barrio": "Urb Usubal"
+	},
+	{
+		"municipio": "CAROLINA",
+		"barrio": "Bo Trujillo Bajo"
+	},
+	{
+		"municipio": "CAROLINA",
+		"barrio": "Parque Ind Saint Just"
+	},
+	{
+		"municipio": "CAROLINA",
+		"barrio": "Bo Cacao"
+	},
+	{
+		"municipio": "CAROLINA",
+		"barrio": "Bo Santa Cruz / Aldea"
+	},
+	{
+		"municipio": "CAROLINA",
+		"barrio": "Bo Canovanillas / Los Hance"
+	},
+	{
+		"municipio": "CAROLINA",
+		"barrio": "Bo Sabana Abajo"
+	},
+	{
+		"municipio": "CAROLINA",
+		"barrio": "Bo Canovanillas"
+	},
+	{
+		"municipio": "CAROLINA",
+		"barrio": "Bo Santa Cruz"
+	},
+	{
+		"municipio": "CAROLINA",
+		"barrio": "Urb Hacienda Real"
+	},
+	{
+		"municipio": "CAYEY",
+		"barrio": "Bo Mogote"
+	},
+	{
+		"municipio": "CAYEY",
+		"barrio": "Bo Maton Abajo"
+	},
+	{
+		"municipio": "CAYEY",
+		"barrio": "Repto Montellanos"
+	},
+	{
+		"municipio": "CAYEY",
+		"barrio": "Bo Toita"
+	},
+	{
+		"municipio": "CAYEY",
+		"barrio": "Bo Sud"
+	},
+	{
+		"municipio": "CAYEY",
+		"barrio": "Bo Honduras"
+	},
+	{
+		"municipio": "CAYEY",
+		"barrio": "Bo Rincon"
+	},
+	{
+		"municipio": "CAYEY",
+		"barrio": "Urb San Martin"
+	},
+	{
+		"municipio": "CAYEY",
+		"barrio": "Bda San Cristobal"
+	},
+	{
+		"municipio": "CIALES",
+		"barrio": "Bo Cialito"
+	},
+	{
+		"municipio": "CIALES",
+		"barrio": "Bo Pesas"
+	},
+	{
+		"municipio": "CIDRA",
+		"barrio": "Bo Honduras"
+	},
+	{
+		"municipio": "CIDRA",
+		"barrio": "Bo Montellano / Carruzo"
+	},
+	{
+		"municipio": "CIDRA",
+		"barrio": "Bo Rio Abajo"
+	},
+	{
+		"municipio": "COMERIO",
+		"barrio": "Bo Dona Elena"
+	},
+	{
+		"municipio": "COMERIO",
+		"barrio": "Bo Palomas"
+	},
+	{
+		"municipio": "COROZAL",
+		"barrio": "Bo Palmarejo"
+	},
+	{
+		"municipio": "DORADO",
+		"barrio": "Bo Espinosa"
+	},
+	{
+		"municipio": "DORADO",
+		"barrio": "Bo Puertos / La Pra"
+	},
+	{
+		"municipio": "DORADO",
+		"barrio": "Pueblo"
+	},
+	{
+		"municipio": "DORADO",
+		"barrio": "Urb Dorado Del Mar"
+	},
+	{
+		"municipio": "DORADO",
+		"barrio": "Bo Maguayo"
+	},
+	{
+		"municipio": "GUAYAMA",
+		"barrio": "Bo Las Cuevas"
+	},
+	{
+		"municipio": "GUAYNABO",
+		"barrio": "Cond Prados Del Monte"
+	},
+	{
+		"municipio": "GUAYNABO",
+		"barrio": "Urb Garden Hills"
+	},
+	{
+		"municipio": "GUAYNABO",
+		"barrio": "Cond Malaga Park"
+	},
+	{
+		"municipio": "GUAYNABO",
+		"barrio": "Urb Summit Hills"
+	},
+	{
+		"municipio": "GUAYNABO",
+		"barrio": "Urb Torrimar"
+	},
+	{
+		"municipio": "GUAYNABO",
+		"barrio": "Bo Frailes"
+	},
+	{
+		"municipio": "GUAYNABO",
+		"barrio": "Cond El Bosque"
+	},
+	{
+		"municipio": "GUAYNABO",
+		"barrio": "Urb Villa Caparra"
+	},
+	{
+		"municipio": "HATILLO",
+		"barrio": "Bo Bayaney / Mariposa"
+	},
+	{
+		"municipio": "LAS MARIAS",
+		"barrio": "Bo Anones"
+	},
+	{
+		"municipio": "LAS PIEDRAS",
+		"barrio": "Bo Montones 4"
+	},
+	{
+		"municipio": "LAS PIEDRAS",
+		"barrio": "Bo Collores"
+	},
+	{
+		"municipio": "LUQUILLO",
+		"barrio": "Urb Villas De Luquillo"
+	},
+	{
+		"municipio": "MANATI",
+		"barrio": "Urb Alturas De Manati"
+	},
+	{
+		"municipio": "MARICAO",
+		"barrio": "Bo Montoso"
+	},
+	{
+		"municipio": "MARICAO",
+		"barrio": "Bo Indiera Baja"
+	},
+	{
+		"municipio": "Mayaguez",
+		"barrio": "El Garabato"
+	},
+	{
+		"municipio": "MAYAGUEZ",
+		"barrio": "Urb Mayaguez Terrace"
+	},
+	{
+		"municipio": "MAYAGUEZ",
+		"barrio": "Urb Alturas De Mayaguez"
+	},
+	{
+		"municipio": "MAYAGUEZ",
+		"barrio": "Bo Cuevas"
+	},
+	{
+		"municipio": "MAYAGUEZ",
+		"barrio": "Urb Mayaguez Terrace"
+	},
+	{
+		"municipio": "MAYAGUEZ",
+		"barrio": "Camino La Aurelia"
+	},
+	{
+		"municipio": "MOCA",
+		"barrio": "Parc Mamey"
+	},
+	{
+		"municipio": "MOCA",
+		"barrio": "Bo Cerro Gordo"
+	},
+	{
+		"municipio": "MOCA",
+		"barrio": "Bo Centro"
+	},
+	{
+		"municipio": "MOCA",
+		"barrio": "Bo Cruz"
+	},
+	{
+		"municipio": "MOCA",
+		"barrio": "Bo Naranjo"
+	},
+	{
+		"municipio": "MOROVIS",
+		"barrio": "Urb Brisas Del Rio"
+	},
+	{
+		"municipio": "MOROVIS",
+		"barrio": "Bo Morovis"
+	},
+	{
+		"municipio": "MOROVIS",
+		"barrio": "Brisas Del Rio"
+	},
+	{
+		"municipio": "OROCOVIS",
+		"barrio": "Bo Botijas"
+	},
+	{
+		"municipio": "OROCOVIS",
+		"barrio": "Bo Bauta Arriaba"
+	},
+	{
+		"municipio": "OROCOVIS",
+		"barrio": "Bo Sabana"
+	},
+	{
+		"municipio": "OROCOVIS",
+		"barrio": "Bo Sana Muertos / La Familia"
+	},
+	{
+		"municipio": "PONCE",
+		"barrio": "Urb El Monte"
+	},
+	{
+		"municipio": "PONCE",
+		"barrio": "Bo Real Anon / Vista Alegre"
+	},
+	{
+		"municipio": "PONCE",
+		"barrio": "Urb Perla Del Sur"
+	},
+	{
+		"municipio": "PONCE",
+		"barrio": "Villa Grillasca"
+	},
+	{
+		"municipio": "PONCE",
+		"barrio": "Res Pampanos"
+	},
+	{
+		"municipio": "RIO GRANDE",
+		"barrio": "Urb Paraiso Del Mar"
+	},
+	{
+		"municipio": "RIO GRANDE",
+		"barrio": "Urb Rio Grande Estates"
+	},
+	{
+		"municipio": "SAN GERMAN",
+		"barrio": "Bo Cain Bajo"
+	},
+	{
+		"municipio": "San Juan",
+		"barrio": "Santa Rita"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Bo Obrero"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Villa Andalucia"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb El Comandante"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Bo Tortugo / Sierra Brava"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Res Jdns De Cupey"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Sumitt Hills"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Jdns Metropolitanos"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Belissa"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Quintas De Beverly Hills"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Bda Buen Consejo"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Borinquen / Coop Yambeles"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Rivieras De Cupey"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Summit Hills"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Las Lomas"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Cond University Garden"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Santa Rita"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Caparra Terrace"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Res San Fernando"
+	},
+	{
+		"municipio": "SAN JUAN",
+		"barrio": "Urb Highland Park"
+	},
+	{
+		"municipio": "SAN LORENZO",
+		"barrio": "Bo Florida"
+	},
+	{
+		"municipio": "SAN LORENZO",
+		"barrio": "Bo Quemado"
+	},
+	{
+		"municipio": "SAN SEBASTIAN",
+		"barrio": "Bo Pozas"
+	},
+	{
+		"municipio": "SANTA ISABEL",
+		"barrio": "Bo Peñuelas Y Parcelas"
+	},
+	{
+		"municipio": "TOA ALTA",
+		"barrio": "Urb Villa Del Toa"
+	},
+	{
+		"municipio": "TOA ALTA",
+		"barrio": "Villa Del Toa"
+	},
+	{
+		"municipio": "TOA BAJA",
+		"barrio": "Urb Levittown Lakes"
+	},
+	{
+		"municipio": "TOA BAJA",
+		"barrio": "Bo Campanilla"
+	},
+	{
+		"municipio": "UTUADO",
+		"barrio": "Bo Caonillas"
+	},
+	{
+		"municipio": "UTUADO",
+		"barrio": "Bo Mameyes"
+	},
+	{
+		"municipio": "VEGA ALTA",
+		"barrio": "Bo Pampanos"
+	},
+	{
+		"municipio": "VEGA ALTA",
+		"barrio": "Urb La Esperanza"
+	},
+	{
+		"municipio": "VEGA ALTA",
+		"barrio": "Bo Boqueron"
+	},
+	{
+		"municipio": "VEGA ALTA",
+		"barrio": "Bo Maricao"
+	},
+	{
+		"municipio": "VEGA BAJA",
+		"barrio": "Bo Rio Arriba"
+	},
+	{
+		"municipio": "YAUCO",
+		"barrio": "Bo Naranjo"
+	}
+]}
