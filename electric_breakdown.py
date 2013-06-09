@@ -5,13 +5,15 @@ from suds.client import Client
 aee_url = 'http://wss.prepa.com/services/BreakdownReport?wsdl'
 aee_client = Client(aee_url)
 
-appUrl = "http://23.23.206.79:4000/events"
+#appUrl = "http://23.23.206.79:3000/events"
+appUrl = "http://localhost:3000/events"
 dateFormat = "%Y-%m-%d %H:%M:00"
 snapshot = set()
 
 storedEvents = json.loads(urllib.urlopen(appUrl+".json").read())
 
 for event in storedEvents['events']:
+    print event    
     eventData = event["town"] + event["area"] + event["status"]
     jsonLastUpdate = dparser.parse(event["lastUpdate"], fuzzy = True).strftime(dateFormat)
     eventData = eventData + jsonLastUpdate
@@ -46,7 +48,7 @@ for summary in breakdownSummary:
         relevantData = "".join(identifyingData.lower().split())
         
         if not relevantData in snapshot:
-            #print identifyingData
+            print identifyingData
             urlParams = {"town" : town, "area" : area, "status" : status, "lastUpdate" : lastUpdate}
             
             data = urllib.urlencode(urlParams)
