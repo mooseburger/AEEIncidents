@@ -7,7 +7,7 @@ aee_client = Client(aee_url)
 
 appUrl = "http://23.23.206.79:4000/events"
 dateFormat = "%Y-%m-%d %H:%M:00"
-snapshot = {}
+snapshot = set()
 
 storedEvents = json.loads(urllib.urlopen(appUrl+".json").read())
 
@@ -16,8 +16,8 @@ for event in storedEvents['events']:
     jsonLastUpdate = dparser.parse(event["lastUpdate"], fuzzy = True).strftime(dateFormat)
     eventData = eventData + jsonLastUpdate
 
-    cleanData = "".join(eventData.lower().split())
-    snapshot[cleanData] = eventData
+    eventId = "".join(eventData.lower().split())
+    snapshot.add(eventId)
 
 #print snapshot.keys()
 print "Done polling our database"
