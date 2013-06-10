@@ -34,7 +34,8 @@ var Messages = function () {
       twToCity: params.ToCity,
       twToCountry: params.ToCountry,
       twToState: params.ToState,
-      twToZip: params.ToZip
+      twToZip: params.ToZip,
+      response: params.response
     }
     var self = this
       , message = geddy.model.Message.create(paramsTwilio);
