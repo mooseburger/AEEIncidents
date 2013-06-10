@@ -43,10 +43,10 @@ def send_sms(number,result):
 	from_="+15714140557")
 	return message.sid
 
-#appUrl = "http://localhost:3000/messages"
-appUrl = "http://23.23.206.79:3000/messages"
-#appUrlEvents="http://localhost:3000/events"
-appUrlEvents="http://23.23.206.79:3000/events"
+appUrl = "http://localhost:3000/messages"
+#appUrl = "http://23.23.206.79:3000/messages"
+appUrlEvents="http://localhost:3000/events"
+#appUrlEvents="http://23.23.206.79:3000/events"
 
 results=[]
 
