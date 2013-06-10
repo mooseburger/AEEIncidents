@@ -20,7 +20,7 @@ var config = {
   detailedErrors: true
 , debug: true
 , hostname: null
-, port: 4000
+, port: 3000
 , model: {
     defaultAdapter: 'postgres'
 	}
@@ -29,7 +29,7 @@ var config = {
 			user: 'postgres'
 			,database: 'hack'
 			,password:'abca1234'
-			,host: 'localhost'
+			,host: '23.23.206.79'
 			,port: 3600
 	}
 }
