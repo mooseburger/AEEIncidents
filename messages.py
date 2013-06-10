@@ -60,6 +60,11 @@ for message in storedMessages['messages']:
 		#print str(messageLen)
 		compareval=""
 		for event in storedEvents['events']:
+
+			try:
+				area = event["area"].encode("utf-8")
+			except UnicodeDecodeError:
+				area = event["area"].decode("utf-8")
 			#print area
 			percent1 = compare_words(messageData,str(area).decode("UTF-8"))
 			if(percent1>70):
@@ -69,6 +74,11 @@ for message in storedMessages['messages']:
 			#print "1 "+str(percent1) +" "+ str(event["area"].encode("UTF-8"))+" "+str(event["town"].encode("UTF-8"))
 		for event in storedEvents['events']:
 
+			try:
+				area = event["area"].encode("utf-8")
+			except UnicodeDecodeError:
+				area = event["area"].decode("utf-8")
+
 			percent2 = compare_words(messageData,str(area).decode("UTF-8"))
 			if(percent2>70):
 			    results.append(Result(str(event["id"].encode("UTF-8")),percent2, 
@@ -76,6 +86,11 @@ for message in storedMessages['messages']:
 			    	str(event["status"].encode("UTF-8")),str(event["lastUpdate"].encode("UTF-8"))))
 			#print "2 "+str(percent2) +" "+ str(event["area"].encode("UTF-8"))+" "+str(event["town"].encode("UTF-8"))
         for event in storedEvents['events']:
+
+			try:
+				area = event["area"].encode("utf-8")
+			except UnicodeDecodeError:
+				area = event["area"].decode("utf-8")
 
 			compareval = str(area).decode("UTF-8")
 			percent3 = compare_words(messageData,str(event["town"].encode("UTF-8"))+" "+compareval)
@@ -98,9 +113,10 @@ for message in storedMessages['messages']:
 		else:
 			finalresult=recent
 		#print message["twFrom"]	
-		#print send_sms(message["twFrom"],finalresult)
-		print "sent"
+		print send_sms(message["twFrom"],finalresult)
+
 		#print message["id"]
+
 		url = appUrl + "/" + message["id"] + "?_method=PUT"
 		urlParams = urllib.urlencode({"sent":1,"valid":1,"response":finalresult.id})
 		response = urllib.urlopen(url, urlParams).read()		
@@ -110,4 +126,4 @@ for message in storedMessages['messages']:
     	urlParams = urllib.urlencode({"valid":1})
     	response = urllib.urlopen(url, urlParams).read()
 
-print "Done polling our database"
+print "Done sending sms"
