@@ -27,8 +27,8 @@ for event in eventsToPost:
     except UnicodeDecodeError:
         area = event["area"].decode("utf-8")
 
-    town =  event["town"].encode("utf-8")
-    status = event["status"].encode("utf-8")    
+    town =  event["town"].decode("utf-8")
+    status = event["status"].decode("utf-8")    
   
     town = "".join(town.split())
     
