@@ -3,7 +3,9 @@ var Messages = function () {
 
   this.index = function (req, resp, params) {
     var self = this;
-        geddy.model.Message.all(function(err, messages) {
+    var lastHour = new Date();
+    lastHour.setHours(lastHour.getHours() - 1);
+      geddy.model.Message.all({valid:'false',sent:'false',createdAt: {gt: lastHour}},function(err, messages) {
       self.respond({params: params, messages: messages});
     });
     
@@ -113,7 +115,6 @@ var Messages = function () {
       }
     });
   };
-
 };
 
 exports.Messages = Messages;
