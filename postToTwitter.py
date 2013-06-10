@@ -20,27 +20,32 @@ twitterApi = twitter.Api(consumer_key="NCgdH3VLp5MGcCtvqBcEg",
                          access_token_secret="aZX45fWxpkdHa6ddHtEd4VHUamXzXEHkvVb174Mk")
 
 for event in eventsToPost:
-    lastUpdate = dparser.parse(event["lastUpdate"], fuzzy = True).strftime(dateFormat)
+    try:
+        lastUpdate = dparser.parse(event["lastUpdate"], fuzzy = True).strftime(dateFormat)
     
-    try:    
-        area = event["area"].encode("utf-8")
-    except UnicodeDecodeError:
-        area = event["area"].decode("utf-8")
+        try:    
+            area = event["area"].encode("utf-8")
+        except UnicodeDecodeError:
+            area = event["area"].decode("utf-8")
 
-    town =  event["town"].decode("utf-8")
-    status = event["status"].decode("utf-8")    
+        town =  event["town"]
+        status = event["status"]    
   
-    town = "".join(town.split())
+        town = "".join(town.split())
     
-    tweet = tweetFormat.format(Fecha=lastUpdate, Area=area, Municipio=town, Estado=status)
-    twitterApi.PostUpdate(tweet)
-
-    url = appUrl + "/" + event["id"] + "?_method=PUT"
+        tweet = tweetFormat.format(Fecha=lastUpdate, Area=area, Municipio=town, Estado=status)
+        try:
+            twitterApi.PostUpdate(tweet)
+        except twitter.TwitterError:
+            pass
+        url = appUrl + "/" + event["id"] + "?_method=PUT"
         
-    urlParams = urllib.urlencode({"posted":1})
-    #print tweet    
-    #print url + urlParams    
-    response = urllib.urlopen(url, urlParams).read()
+        urlParams = urllib.urlencode({"posted":1})
+        #print tweet    
+        #print url + urlParams    
+        response = urllib.urlopen(url, urlParams).read()
+    except:
+        pass
     
     
 
