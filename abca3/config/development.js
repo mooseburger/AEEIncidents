@@ -29,8 +29,8 @@ var config = {
 			user: 'postgres'
 			,database: 'hack'
 			,password:'abca1234'
-			,host: '23.23.206.79'
-			,port: 3600
+			,host: 'localhost'
+			,port: 5432
 	}
 }
 , sessions: {
