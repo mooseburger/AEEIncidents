@@ -8,7 +8,7 @@ var Events = function () {
 
     today.setHours(today.getHours() - 24);
     
-    geddy.model.Event.all({lastUpdate: {gt: today}}, function(err, events) {
+    geddy.model.Event.all({lastUpdate: {gt: today}}, {sort: {lastUpdate: "desc"}},function(err, events) {
       self.respond({params: params, events: events});    
     });
   };
