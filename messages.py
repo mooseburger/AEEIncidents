@@ -117,17 +117,17 @@ for message in storedMessages['messages']:
 		else:
 			finalresult=recent
 		#print message["twFrom"]	
-		#print send_sms(message["twFrom"],finalresult)
+		print send_sms(message["twFrom"],finalresult)
 
-		print message["id"]
+		#print message["id"]
 
 		url = appUrl + "/" + message["id"] + "?_method=PUT"
 		urlParams = urllib.urlencode({"sent":1,"valid":1,"response":str(finalresult.id)})
-		#response = urllib.urlopen(url, urlParams).read()		
+		response = urllib.urlopen(url, urlParams).read()		
 	else:
 
 		url = appUrl + "/" + message["id"] + "?_method=PUT"
     	urlParams = urllib.urlencode({"valid":1})
-    	#response = urllib.urlopen(url, urlParams).read()
+    	response = urllib.urlopen(url, urlParams).read()
 
 print "Done sending sms"
