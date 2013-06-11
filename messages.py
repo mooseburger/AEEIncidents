@@ -35,7 +35,7 @@ def compare_words(sentence1, sentence2):
 def send_sms(number,result):
 	dateFormat = "%Y/%m/%d %H:%M:00"
 	account_sid = "ACa0ab47de030b424a97788cec56ab466c"
-	auth_token  = "4de19bdeb9061152e7c5c97da876e26e"
+	auth_token  = "x"
 	client = TwilioRestClient(account_sid, auth_token)
 	message = client.sms.messages.create(body=result.status+" en "+result.town+
 		" , "+result.area+" "+dparser.parse(result.date, fuzzy = True).strftime(dateFormat),
@@ -65,6 +65,7 @@ for message in storedMessages['messages']:
 				area = event["area"].encode("utf-8")
 			except UnicodeDecodeError:
 				area = event["area"].decode("utf-8")
+
 			#print area
 			percent1 = compare_words(messageData,str(area).decode("UTF-8"))
 			if(percent1>70):
@@ -75,11 +76,11 @@ for message in storedMessages['messages']:
 		for event in storedEvents['events']:
 
 			try:
-				area = event["area"].encode("utf-8")
+				town = event["town"].encode("utf-8")
 			except UnicodeDecodeError:
-				area = event["area"].decode("utf-8")
+				town = event["town"].decode("utf-8")
 
-			percent2 = compare_words(messageData,str(area).decode("UTF-8"))
+			percent2 = compare_words(messageData,str(town).decode("UTF-8"))
 			if(percent2>70):
 			    results.append(Result(str(event["id"].encode("UTF-8")),percent2, 
 			    	str(event["town"].encode("UTF-8")),str(area).decode("UTF-8"),
@@ -89,11 +90,14 @@ for message in storedMessages['messages']:
 
 			try:
 				area = event["area"].encode("utf-8")
+				town = event["town"].encode("utf-8")
 			except UnicodeDecodeError:
+				print "decode"
 				area = event["area"].decode("utf-8")
+				town = event["town"].decode("utf-8")
 
 			compareval = str(area).decode("UTF-8")
-			percent3 = compare_words(messageData,str(event["town"].encode("UTF-8"))+" "+compareval)
+			percent3 = compare_words(messageData,str(town).decode("UTF-8")+" "+compareval)
 			if(percent3>75):
 				results.append(Result(str(event["id"].encode("UTF-8")),percent3, 
 					str(event["town"].encode("UTF-8")),str(area).decode("UTF-8"),
@@ -113,17 +117,17 @@ for message in storedMessages['messages']:
 		else:
 			finalresult=recent
 		#print message["twFrom"]	
-		print send_sms(message["twFrom"],finalresult)
+		#print send_sms(message["twFrom"],finalresult)
 
-		#print message["id"]
+		print message["id"]
 
 		url = appUrl + "/" + message["id"] + "?_method=PUT"
-		urlParams = urllib.urlencode({"sent":1,"valid":1,"response":finalresult.id})
-		response = urllib.urlopen(url, urlParams).read()		
+		urlParams = urllib.urlencode({"sent":1,"valid":1,"response":str(finalresult.id)})
+		#response = urllib.urlopen(url, urlParams).read()		
 	else:
 
 		url = appUrl + "/" + message["id"] + "?_method=PUT"
     	urlParams = urllib.urlencode({"valid":1})
-    	response = urllib.urlopen(url, urlParams).read()
+    	#response = urllib.urlopen(url, urlParams).read()
 
 print "Done sending sms"
