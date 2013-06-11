@@ -33,7 +33,7 @@ twitterApi = twitter.Api(consumer_key="NCgdH3VLp5MGcCtvqBcEg",
                          access_token_key="1486306525-RGwIIsWXfWlRiUTqQlSB6f1icA5ZTd806E3X1tz",
                          access_token_secret="aZX45fWxpkdHa6ddHtEd4VHUamXzXEHkvVb174Mk")
 
-for event in eventsToPost:
+for event in reversed(eventsToPost):
     try:
         event = encodedDict(event)        
         lastUpdate = dparser.parse(event["lastUpdate"], fuzzy = True).strftime(dateFormat)
@@ -49,6 +49,7 @@ for event in eventsToPost:
         try:
             twitterApi.PostUpdate(tweet)
         except twitter.TwitterError:
+            print tweet
             pass #something goes wrong on post we don't want to tweet that again
         
         url = appUrl + "/" + event["id"] + "?_method=PUT"
@@ -58,4 +59,5 @@ for event in eventsToPost:
         #print url + urlParams    
         response = urllib.urlopen(url, urlParams).read()
     except Exception:
+        print event
         continue
