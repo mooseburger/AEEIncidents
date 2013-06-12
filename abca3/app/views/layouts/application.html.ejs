@@ -18,15 +18,36 @@
     <!-- <%- scriptLink('/js/models/your_model.js', {type:'text/javascript'}) %> -->
     <%- scriptLink('/js/config/init.js', {type: 'text/javascript'}) %>
 
+    <%- scriptLink('http://d3js.org/d3.v3.min.js', {type: 'text/javascript', charset:'utf-8'}) %>
+    <%- scriptLink('/js/d3.geo.js', {type: 'text/javascript'}) %>
+    <%- scriptLink('/js/d3.js', {type: 'text/javascript'}) %>
+    <%- scriptLink('/js/klass.js', {type: 'text/javascript'}) %>
+    <%- scriptLink('/js/atlaspr.js', {type: 'text/javascript'}) %>
+     <%- scriptLink('/js/underscore-min.js', {type: 'text/javascript'}) %>
+    
     <%- styleLink('/css/bootstrap.min.css', {rel:'stylesheet'}) %>
     <%- styleLink('/css/style.css', {rel:'stylesheet'}) %>
     <%- styleLink('/css/bootstrap.responsive.min.css', {rel:'stylesheet'}) %>
-
+    <%- styleLink('/css/colorbrewer.css', {rel:'stylesheet'}) %>
     <!-- The fav and touch icons -->
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+       <style type="text/css">
+
+#counties path {
+  stroke: #fff;
+  stroke-width: .25px;
+}
+
+#states path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+    </style>
   </head>
   <body>
     <div class="navbar navbar-fixed-top">

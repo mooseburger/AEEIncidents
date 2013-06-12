@@ -1,6 +1,261 @@
+
+<style>
+  .legend {
+    font-size:15px;
+    margin:5px;
+    padding:5px;
+  }
+  .legend li{
+    list-style:none;
+     display:inline;
+     height:20px;
+     width:20px;
+
+  }
+  .legend  li:nth-child(1):before {
+    content: "■ ";
+    color: #3FDE3A;
+    
+    font-size: 30px;
+  }
+   .legend li:nth-child(2):before {
+    content: "■ ";
+    color: #7BDE3A;
+   
+    font-size: 30px;
+  }
+   .legend li:nth-child(3):before {
+    content: "■ ";
+    color: #9FDE3A;
+   
+    font-size: 30px;
+  }
+   .legend li:nth-child(4):before {
+    content: "■ ";
+    color: #C5DE3A;
+    font-size: 30px;
+  }
+  .legend  li:nth-child(5):before {
+    content: "■ ";
+    color: #FCEE1E;
+    
+    font-size: 30px;
+  }
+   .legend li:nth-child(6):before {
+    content: "■ ";
+    color: #FCC91E;
+    font-size: 30px;
+  }
+   .legend li:nth-child(7):before {
+    content: "■ ";
+    color: #FC8D1E;
+   
+    font-size: 30px;
+  }
+  
+  .legend li:nth-child(8):before {
+    content: "■ ";
+    color: #FC4E1E;
+   
+    font-size: 30px;
+  }
+   .legend li:nth-child(9):before {
+    content: "■ ";
+    color: #FC681E;
+   
+    font-size: 30px;
+  }
+  
+   .legend li:nth-child(10):before {
+    content: "■ ";
+    color: #FF0505;
+   
+    font-size: 30px;
+  }
+</style>
 <!-- Lets talk about geddy -->
 <div class="hero-unit geddy-welcome-box">
-  <h1>Welcome to AEE Indicents</h1>
-  <p>We are under construction...</p>
-  <p><%- linkTo('Lets get you started »', '#', {class: 'btn btn-primary btn-large'}) %></p>
+  
+  <h1>Welcome to AEE Incidents</h1>
+  <h2>(last 72 hours)</h2>
+ 
+
+<div class="legend" style="text-align:center;">
+  <ul>
+    <li>~1 Incidentes</li>
+   <li>~3 Incidentes</li>
+    <li>~5 Incidentes</li>
+    <li>~7 Incidentes</li>
+    <li>~9 Incidentes</li><br>
+    <li>~11 Incidentes</li>
+    <li>~13 Incidentes</li>
+    <li>~15 Incidentes</li>
+    <li>15+ Incidentes</li>
+      
+  </ul>
 </div>
+
+<div id="map"></div>
+
+
+ <div id = 'map'></div>
+  <p id = 'barrio'></p>
+  <p id = 'pueblo'></p>
+  
+  
+  </div>
+  <script type = 'text/javascript'>
+    $('#map').empty();
+    var eventdata = {};
+    var colors = [
+        "rgb(254,224,210)","rgb(252,146,114)","rgb(222,45,38)",	"rgb(254,229,217)","rgb(252,174,145)","rgb(251,106,74)","rgb(203,24,29)","rgb(254,229,217)","rgb(252,174,145)","rgb(251,106,74)",
+	"rgb(222,45,38)","rgb(165,15,21)","rgb(254,229,217)","rgb(252,187,161)",	"rgb(252,146,114)","rgb(251,106,74)","rgb(222,45,38)","rgb(165,15,21)",	"rgb(254,229,217)","rgb(252,187,161)",
+	"rgb(252,146,114)","rgb(251,106,74)","rgb(239,59,44)","rgb(203,24,29)","rgb(153,0,13)","rgb(255,245,240)","rgb(254,224,210)","rgb(252,187,161)","rgb(252,146,114)","rgb(251,106,74)",
+	"rgb(239,59,44)","rgb(203,24,29)","rgb(153,0,13)","rgb(255,245,240)","rgb(254,224,210)","rgb(252,187,161)","rgb(252,146,114)","rgb(251,106,74)","rgb(239,59,44)","rgb(203,24,29)","rgb(165,15,21)","rgb(103,0,13)"
+                  ];
+    var colors2 =[
+      "#FAF7F7",
+      "#FCD4D4",
+      "#FFADAD",
+      "#FF8A8A",
+      "#FF7878",
+      "#FC5B5B",
+      "#FC3F3F",
+      "#FC2323",
+      "#FC0D0D",
+      "#FA0202"
+      
+    ]
+    var colors3 = [
+      "#3FDE3A",
+      "#7BDE3A",
+      "#9FDE3A",
+      "#C5DE3A",
+      "#FCEE1E",
+      "#FCC91E",
+      "#FC8D1E",
+      "#FC681E",
+      "#FC4E1E",
+      "#FF0505"
+      
+      
+      
+    ]
+//.BuGn .q1-9{fill:rgb(229,245,249)}
+//.BuGn .q2-9{fill:rgb(204,236,230)}
+//.BuGn .q3-9{fill:rgb(153,216,201)}
+//.BuGn .q4-9{fill:rgb(102,194,164)}
+//.BuGn .q5-9{fill:rgb(65,174,118)}
+//.BuGn .q6-9{fill:rgb(35,139,69)}
+//.BuGn .q7-9{fill:rgb(0,109,44)}
+//.BuGn .q8-9{fill:rgb(0,68,27)}
+    $.getJSON('../events.json',function(data){
+      
+        eventdata = data;
+       
+        new AtlasPR({zoom: true, node: document.getElementById("map"), size: "large" ,tiles: ["isla",'barrios','pueblos'], on_ready: ready,
+      events: {
+        on_mouseover: hover
+     
+      }
+          });
+        
+    });
+  
+   
+    var node = document.getElementById("map");
+    var color = d3.scale.category20b();
+    var ready = function ready(atlas){
+      var self = atlas;
+    //  var svg =  d3.select('svg');
+    //svg.append("circle")
+    //                      .attr("cx", 0)
+    //                      .attr("cy", 0)
+    //                      .attr("r", 5)
+    //                      .attr("class","markers")
+    //                      .attr("style","fill:" + colors3[0] + ";");
+      atlas.maps['pueblos'].style("fill-opacity", 0.5);
+      atlas.maps['pueblos'].style("fill", function(d){
+        var puebloData = [];
+         puebloData = _.filter(eventdata.events,function(_item) {
+          
+          return _item.town.toLowerCase() == d.properties.NAME.toLowerCase() && _item.status.toLowerCase() == 'averia reportada'});
+      //  var uniqueNames = [];
+      //$.each(puebloData, function(i, el){
+      //    if($.inArray(el, uniqueNames) === -1) uniqueNames.push(el);
+      //});
+      //alert(puebloData.length + '-' + uniqueNames.length);
+      //
+        var index = 0;
+        var colorindex = 0;
+        if (puebloData) {
+          
+           index = puebloData.length;
+        }
+        
+        if (index <= 1) {
+           colorindex = 0;
+        }else if (index <= 3) {
+          colorindex = 1;
+        }else if (index <= 5) {
+          colorindex = 2;
+        }else if (index <= 7) {
+          colorindex = 3;
+        }else if (index <= 9) {
+          colorindex = 4;
+        
+        }else if (index <= 11) {
+          colorindex = 5;
+        
+        }else if (index <= 13) {
+          colorindex = 6;
+        }else if (index <= 15) {
+          colorindex = 7;
+        }else if (index <= 17) {
+          colorindex = 8;
+        }else if (index > 17) {
+          colorindex = 9;
+        }
+        //
+          //code
+        
+       
+      return colors3[colorindex];
+      });
+    }
+        
+         
+      
+      
+      
+      
+   
+    var hover = function hover(info, path){
+      debugger;
+       var data = _.filter(eventdata.events,function(_item) {
+          return _item.town.toLowerCase() == info.properties.NAME.toLowerCase() && _item.status.toLowerCase() == 'averia reportada'});
+       
+       var averias = 'NA';
+       var barrios = [];
+       if (data) {
+        debugger;
+         averias = data.length;
+         _.each(data,function(_item){
+          if($.inArray(_item.area, barrios) === -1) barrios.push(_item.area);
+         })
+       }
+      
+      d3.select("#pueblo").text(info.properties.NAME + '- Averias:'  + averias + ', Barrios:' + barrios.toString());
+    
+     
+    };
+    
+
+    
+    
+
+
+
+
+
+    </script>
