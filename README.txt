@@ -6,6 +6,8 @@ DEPENDENCIES
 
         python-suds
 
+        python-dateutil
+        
         twilio (easy_install twilio)
 
 node.js
