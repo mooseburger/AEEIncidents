@@ -105,13 +105,13 @@ for message in storedMessages['messages']:
 	    response = urllib.urlopen(url, urlParams).read() 
         else:
             url = appUrl + "/" + message["id"] + "?_method=PUT"
-            urlParams = urllib.urlencode({"valid":0,"response":str("not valid input")})
+            urlParams = urllib.urlencode({"valid":1,"response":str("not valid input")})
             response = urllib.urlopen(url, urlParams).read() 
         print finalresult
     except Exception:
         print event
         url = appUrl + "/" + message["id"] + "?_method=PUT"
-        urlParams = urllib.urlencode({"valid":0,"response":str("not valid input")})
+        urlParams = urllib.urlencode({"valid":1,"response":str("not valid input")})
         response = urllib.urlopen(url, urlParams).read() 
         continue
 print "Done sending sms"
