@@ -98,7 +98,7 @@ var Messages = function () {
           params.errors = err;
           self.transfer('edit');
         } else {
-          self.redirect({controller: self.name});
+          console.log("saved: "+data);
         }
       });
     });
