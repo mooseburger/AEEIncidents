@@ -2,20 +2,8 @@ import twitter
 import json
 import urllib
 import dateutil.parser as dparser
-
-def encodedDict(in_dict):
-    out_dict = {}
-    for k, v in in_dict.iteritems():
-        out_dict[k] = encodedString(v)
-    return out_dict
-
-def encodedString(word):
-    if isinstance(word, unicode):
-        word = word.encode('utf8')
-    elif isinstance(word, str):
-        # Must be encoded in UTF-8
-        word = word.decode('utf8')
-    return word
+from config import *
+from encodingHelper import *
 
 #appUrl = "http://aeeincidents.info:3000/events"
 appUrl = "http://localhost:3000/events"
@@ -28,10 +16,10 @@ jsonData = json.loads(urllib.urlopen(appUrl+".json").read())
 latestEvents = jsonData["events"]
 eventsToPost = [event for event in latestEvents if not event["posted"]]
 
-twitterApi = twitter.Api(consumer_key="NCgdH3VLp5MGcCtvqBcEg",
-                         consumer_secret="ws9gH3IMMf7Me3yisICjRbog4Irove05PTMkBv1e8",
-                         access_token_key="1486306525-RGwIIsWXfWlRiUTqQlSB6f1icA5ZTd806E3X1tz",
-                         access_token_secret="aZX45fWxpkdHa6ddHtEd4VHUamXzXEHkvVb174Mk")
+twitterApi = twitter.Api(consumer_key = CONSUMER_KEY,
+                         consumer_secret = CONSUMER_SECRET,
+                         access_token_key = ACCESS_TOKEN,
+                         access_token_secret = ACCESS_TOKEN_SECRET)
 
 for event in reversed(eventsToPost):
     try:
@@ -45,7 +33,7 @@ for event in reversed(eventsToPost):
   
         town = "".join(town.split())
     
-        tweet = tweetFormat.format(Fecha=lastUpdate, Area=area, Municipio=town, Estado=status)
+        tweet = tweetFormat.format(Fecha = lastUpdate, Area = area, Municipio = town, Estado = status)
         try:
             twitterApi.PostUpdate(tweet)
         except twitter.TwitterError:
