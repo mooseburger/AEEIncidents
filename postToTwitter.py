@@ -22,30 +22,30 @@ twitterApi = twitter.Api(consumer_key = CONSUMER_KEY,
                          access_token_secret = ACCESS_TOKEN_SECRET)
 
 for event in reversed(eventsToPost):
-    try:
-        event = encodedDict(event)        
-        lastUpdate = dparser.parse(event["lastUpdate"], fuzzy = True).strftime(dateFormat)
     
-        area = event["area"]
+    event = encodedDict(event)        
+    lastUpdate = dparser.parse(event["lastUpdate"], fuzzy = True).strftime(dateFormat)
 
-        town =  event["town"]
-        status = event["status"]    
-  
-        town = "".join(town.split())
+    area = event["area"]
+
+    town =  event["town"]
+    status = event["status"]    
+
+    town = "".join(town.split())
+
+    tweet = tweetFormat.format(Fecha = lastUpdate, Area = area, Municipio = town, Estado = status)
+    try:
+        twitterApi.PostUpdate(tweet)
+    except twitter.TwitterError:
+        print tweet
+        pass #something goes wrong on post we don't want to tweet that again
     
-        tweet = tweetFormat.format(Fecha = lastUpdate, Area = area, Municipio = town, Estado = status)
-        try:
-            twitterApi.PostUpdate(tweet)
-        except twitter.TwitterError:
-            print tweet
-            pass #something goes wrong on post we don't want to tweet that again
-        
-        url = appUrl + "/" + event["id"] + "?_method=PUT"
-        
-        urlParams = urllib.urlencode({"posted":1})
-        #print tweet    
-        #print url + urlParams    
-        response = urllib.urlopen(url, urlParams).read()
-    except Exception:
-        print event
-        continue
+    url = appUrl + "/" + event["id"] + "?_method=PUT"
+    
+    urlParams = urllib.urlencode({"posted":1})
+    #print tweet    
+    #print url + urlParams    
+    response = urllib.urlopen(url, urlParams).read()
+
+    print event
+    
