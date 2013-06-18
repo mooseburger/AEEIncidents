@@ -36,13 +36,13 @@ def lookup(town,area, body):
 #this will send a sms for result
 def send_sms(number,result):
     dateFormat = "%Y/%m/%d %H:%M:00"
-    account_sid = "ACa0ab47de030b424a97788cec56ab466c"
-    auth_token  = "z"
+    account_sid = ACCOUNT_SID
+    auth_token  = AUTH_TOKEN
     client = TwilioRestClient(account_sid, auth_token)
     message = client.sms.messages.create(body=result.status+" en "+result.town+
         " , "+result.area+" "+dparser.parse(result.date, fuzzy = True).strftime(dateFormat),
     to=number,    
-    from_="+15714140557")
+    from_=TWNUMBER)
     return message.sid
 
 def encodedDict(in_dict):
